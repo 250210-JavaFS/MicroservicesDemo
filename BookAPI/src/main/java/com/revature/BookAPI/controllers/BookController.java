@@ -22,4 +22,13 @@ public class BookController {
 
     }
 
+    //Method that sends an HTTP requests to another API to get book recommendations
+    @GetMapping("/recs")
+    public ResponseEntity<String[]> getBookRecs(){
+
+        //Using RestTemplate to send an HTTP Request to another API
+
+
+    }
+
 }

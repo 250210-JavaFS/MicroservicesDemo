@@ -58,7 +58,7 @@ public class BookController {
 
                     return ResponseEntity.ok(recs);
                 },
-                throwable -> getRecsFallback(throwable)
+                this::getRecsFallback //Method reference syntax - the Throwable will be included implicitly
         );
     }
 

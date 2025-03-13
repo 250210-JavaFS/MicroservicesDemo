@@ -69,6 +69,7 @@ public class BookController {
         System.out.println("Fallback triggered due to: " + t.getMessage());
         return ResponseEntity.ok(
                 new String[] {"Couldn't get recs! Here's a generic one:", "The Bible"});
+        //TODO: better not send this as an array, maybe a DTO with an optional error message field
     }
 
 }

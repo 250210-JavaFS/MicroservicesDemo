@@ -67,9 +67,11 @@ public class BookController {
     //Fallback method for getBookRecs
     public ResponseEntity<String[]> getRecsFallback(Throwable t){
         System.out.println("Fallback triggered due to: " + t.getMessage());
-        return ResponseEntity.ok(
-                new String[] {"Couldn't get recs! Here's a generic one:", "The Bible"});
+        return ResponseEntity.status(502).body( //502 == "Bad Gateway"
+                new String[] {"Couldn't get recs! Here's a generic one:", "The Bible"
+                });
         //TODO: better not send this as an array, maybe a DTO with an optional error message field
+            //Then our ResponseEntity return types would be DTOs too
     }
 
 }
